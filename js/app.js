@@ -5,7 +5,8 @@
   document.addEventListener("DOMContentLoaded", function() {
     const display = new Display();
     display.checkFields();
-  });
+    display.hideSubmit();
+    });
 
   // display constructor function
   function Display() {
@@ -28,5 +29,10 @@
     console.log(this);
   };
 
+  // disable submit button
+  Display.prototype.hideSubmit = function() {
+    const submitBtn = document.querySelector(".submitBtn");
+    submitBtn.disabled = true;
+  };
 
 })();
