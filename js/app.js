@@ -11,9 +11,18 @@
   // add customer on submit
   document.getElementById("customer-form").addEventListener("submit", function(event) {
     event.preventDefault();
+    // get fields
     const name = this.querySelector(".name");
     const course = this.querySelector(".course");
     const author = this.querySelector(".author");
+
+    // pass fields' values as the arguments to the Customer constructor function
+    const customer = new Customer(name.value, course.value, author.value);
+
+    // create new display with newly created customer
+
+    
+
   });
 
   // display form constructor function
