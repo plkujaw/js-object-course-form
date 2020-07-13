@@ -56,6 +56,11 @@
     submitBtn.disabled = true;
   };
 
-
+  // customer constructor function
+  function Customer(name, course, author) {
+    this.name = name;
+    this.course = course;
+    this.author = author;
+  }
 
 })();
