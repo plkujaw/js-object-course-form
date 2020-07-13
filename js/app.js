@@ -8,7 +8,15 @@
     formDisplay.hideSubmit();
     });
 
-  // display constructor function
+  // add customer on submit
+  document.getElementById("customer-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = this.querySelector(".name");
+    const course = this.querySelector(".course");
+    const author = this.querySelector(".author");
+  });
+
+  // display form constructor function
   function FormDisplay() {
     this.name = document.getElementById("name");
     this.course = document.getElementById("course");
@@ -47,5 +55,7 @@
     const submitBtn = document.querySelector(".submitBtn");
     submitBtn.disabled = true;
   };
+
+
 
 })();
