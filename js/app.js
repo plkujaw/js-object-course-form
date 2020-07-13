@@ -72,6 +72,8 @@
     const feedback = document.querySelector(".feedback");
     const loading = document.querySelector(".loading");
 
+    feedback.classList.add("showItem", "alert", "alert-success");
+    loading.classList.add("showItem");
 
   }
 
