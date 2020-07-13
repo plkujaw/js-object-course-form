@@ -75,6 +75,8 @@
     feedback.classList.add("showItem", "alert", "alert-success");
     loading.classList.add("showItem");
 
+    const self = this;
+    self.hideSubmit();
   }
 
 
