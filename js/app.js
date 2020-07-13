@@ -22,6 +22,9 @@
     // create new display with newly created customer
     const display = new Display();
 
+    display.feedback(customer);
+    display.clearFields();
+
   });
 
   // display form constructor function
@@ -63,6 +66,18 @@
     const submitBtn = document.querySelector(".submitBtn");
     submitBtn.disabled = true;
   };
+
+  // clear fields
+
+  Display.prototype.clearFields = function() {
+    this.name.value = "";
+    this.course.value = "";
+    this.author.value = "";
+
+    this.name.classList.remove("complete", "fail");
+    this.course.classList.remove("complete", "fail");
+    this.author.classList.remove("complete", "fail");
+  }
 
   // customer constructor function
   function Customer(name, course, author) {
