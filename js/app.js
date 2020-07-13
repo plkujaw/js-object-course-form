@@ -18,7 +18,7 @@
 
   // check fields
   FormDisplay.prototype.checkFields = function() {
-    console.log(this);
+    // console.log(this);
     this.name.addEventListener("blur", this.validateField);
     this.course.addEventListener("blur", this.validateField);
     this.author.addEventListener("blur", this.validateField);
@@ -26,7 +26,20 @@
 
   // validate each field
   FormDisplay.prototype.validateField = function() {
-    console.log(this);
+    // console.log(this);
+    if (this.value === "") {
+      this.classList.remove("complete");
+      this.classList.add("fail");
+    } else {
+      this.classList.remove("fail");
+      this.classList.add("complete");
+    }
+    const complete = document.querySelectorAll(".complete");
+    if (complete.length === 3) {
+      document.querySelector(".submitBtn").disabled = false;
+    } else {
+      document.querySelector(".submitBtn").disabled = true;
+    }
   };
 
   // disable submit button
