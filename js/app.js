@@ -77,7 +77,13 @@
 
     const self = this;
     self.hideSubmit();
-  }
+
+    setTimeout(function() {
+      feedback.classList.remove("showItem", "alert", "alert-success");
+      loading.classList.remove("showItem");
+    }, 3000);
+
+  };
 
 
   // clear fields
@@ -89,13 +95,13 @@
     this.name.classList.remove("complete", "fail");
     this.course.classList.remove("complete", "fail");
     this.author.classList.remove("complete", "fail");
-  }
+  };
 
   // customer constructor function
   function Customer(name, course, author) {
     this.name = name;
     this.course = course;
     this.author = author;
-  }
+  };
 
 })();
