@@ -67,8 +67,16 @@
     submitBtn.disabled = true;
   };
 
-  // clear fields
+  // show loading and feedback
+  Display.prototype.feedback = function(customer) {
+    const feedback = document.querySelector(".feedback");
+    const loading = document.querySelector(".loading");
 
+
+  }
+
+
+  // clear fields
   Display.prototype.clearFields = function() {
     this.name.value = "";
     this.course.value = "";
