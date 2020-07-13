@@ -3,9 +3,9 @@
 (function() {
   // check if fields are filled in and hide the submit button
   document.addEventListener("DOMContentLoaded", function() {
-    const formDisplay = new FormDisplay();
-    formDisplay.checkFields();
-    formDisplay.hideSubmit();
+    const display = new Display();
+    display.checkFields();
+    display.hideSubmit();
     });
 
   // add customer on submit
@@ -20,13 +20,12 @@
     const customer = new Customer(name.value, course.value, author.value);
 
     // create new display with newly created customer
-
-    
+    const display = new Display();
 
   });
 
   // display form constructor function
-  function FormDisplay() {
+  function Display() {
     this.name = document.getElementById("name");
     this.course = document.getElementById("course");
     this.author = document.getElementById("author");
@@ -34,7 +33,7 @@
   };
 
   // check fields
-  FormDisplay.prototype.checkFields = function() {
+  Display.prototype.checkFields = function() {
     // console.log(this);
     this.name.addEventListener("blur", this.validateField);
     this.course.addEventListener("blur", this.validateField);
@@ -42,7 +41,7 @@
   };
 
   // validate each field
-  FormDisplay.prototype.validateField = function() {
+  Display.prototype.validateField = function() {
     // console.log(this);
     if (this.value === "") {
       this.classList.remove("complete");
@@ -60,7 +59,7 @@
   };
 
   // disable submit button
-  FormDisplay.prototype.hideSubmit = function() {
+  Display.prototype.hideSubmit = function() {
     const submitBtn = document.querySelector(".submitBtn");
     submitBtn.disabled = true;
   };
